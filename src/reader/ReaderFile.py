@@ -11,8 +11,17 @@ class ReaderFile(IReader):
         :param filename: Имя файла
         """
         self.__filename = filename
+        self.__lines = []
 
     def open(self):
         with open(self.__filename, 'r', encoding='utf8') as file:
-            lines = file.readlines()
-        return lines
+            self.__lines = file.readlines()
+
+    def get_line(self):
+        count = 0
+        while True:
+            if count >= len(self.__lines):
+                return
+            count += 1
+            yield self.__lines[count-1]
+

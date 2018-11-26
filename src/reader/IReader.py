@@ -9,3 +9,11 @@ class IReader(abc.ABC):
         :return: текст
         """
         pass
+
+    @abc.abstractmethod
+    def get_line(self):
+        """
+        Возвращает файл по строчно
+        :return: генератор
+        """
+        pass

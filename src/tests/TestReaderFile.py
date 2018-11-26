@@ -20,4 +20,8 @@ class TestReaderFile(unittest.TestCase):
 
     def test_open_file(self):
         reader = ReaderFile(self.filename)
-        self.assertEqual(''.join(reader.open()), self.TEST_FILE_BODY)
+        reader.open()
+        line = ''
+        for x in reader.get_line():
+            line += x
+        self.assertEqual(line, self.TEST_FILE_BODY)
