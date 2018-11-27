@@ -1,6 +1,6 @@
 from collections import namedtuple
 
-CommentTuple = namedtuple('Comment', 'name status tool text')
+CommentTuple = namedtuple('Comment', 'name status who tool text')
 
 
 class Comment:
@@ -9,7 +9,7 @@ class Comment:
     """
 
     def __init__(self, comment_tuple):
-        self.name, self.status, self.tool, self.text = comment_tuple
+        self.name, self.status, self.who, self.tool, self.text = comment_tuple
         self.__params = []
 
     def set_param(self, comment_param):
