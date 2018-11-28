@@ -2,4 +2,10 @@ import abc
 
 
 class IParser(abc.ABC):
-    pass
+    @abc.abstractmethod
+    def parse(self):
+        """
+        Разбирает текст на наличии документации и возвращает её
+        :return: Comment
+        """
+        pass
